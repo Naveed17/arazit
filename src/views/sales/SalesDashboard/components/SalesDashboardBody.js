@@ -12,8 +12,8 @@ const SalesDashboardBody = () => {
 
 	const dispatch = useDispatch()
 
-	const { 
-		statisticData, 
+	const {
+		statisticData,
 		salesReportData,
 		topProductsData,
 		latestOrderData,
@@ -25,7 +25,7 @@ const SalesDashboardBody = () => {
 		fetchData()
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
-	
+
 	const fetchData = () => {
 		dispatch(getSalesDashboardData())
 	}
@@ -39,7 +39,7 @@ const SalesDashboardBody = () => {
 			</div>
 			<div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
 				<LatestOrder data={latestOrderData} className="lg:col-span-2" />
-				<TopProduct data={topProductsData}/>
+				<TopProduct data={topProductsData} />
 			</div>
 		</Loading>
 	)

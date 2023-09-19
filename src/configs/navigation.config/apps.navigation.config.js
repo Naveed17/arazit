@@ -14,53 +14,53 @@ const appsNavigationConfig = [
 		subMenu: [
 			{
 				key: 'apps.project',
-				path: '',
-				title: 'Project',
-				translateKey: 'nav.appsProject.project',
+				path: `${APP_PREFIX_PATH}/project/dashboard`,
+				title: 'Dashboard',
+				translateKey: 'nav.appsProject.dashboard',
 				icon: 'project',
 				type: NAV_ITEM_TYPE_COLLAPSE,
 				authority: [ADMIN, USER],
 				subMenu: [
-					{
-						key: 'appsProject.dashboard',
-						path: `${APP_PREFIX_PATH}/project/dashboard`,
-						title: 'Dashboard',
-						translateKey: 'nav.appsProject.dashboard',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'appsProject.projectList',
-						path: `${APP_PREFIX_PATH}/project/project-list`,
-						title: 'Project List',
-						translateKey: 'nav.appsProject.projectList',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'appsProject.scrumBoard',
-						path: `${APP_PREFIX_PATH}/project/scrum-board`,
-						title: 'Scrum Board',
-						translateKey: 'nav.appsProject.scrumBoard',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'appsProject.issue',
-						path: `${APP_PREFIX_PATH}/project/issue`,
-						title: 'Issue',
-						translateKey: 'nav.appsProject.issue',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
+					// {
+					// 	key: 'appsProject.dashboard',
+					// 	path: `${APP_PREFIX_PATH}/project/dashboard`,
+					// 	title: 'Dashboard',
+					// 	translateKey: 'nav.appsProject.dashboard',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// },
+					// {
+					// 	key: 'appsProject.projectList',
+					// 	path: `${APP_PREFIX_PATH}/project/project-list`,
+					// 	title: 'Project List',
+					// 	translateKey: 'nav.appsProject.projectList',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// },
+					// {
+					// 	key: 'appsProject.scrumBoard',
+					// 	path: `${APP_PREFIX_PATH}/project/scrum-board`,
+					// 	title: 'Scrum Board',
+					// 	translateKey: 'nav.appsProject.scrumBoard',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// },
+					// {
+					// 	key: 'appsProject.issue',
+					// 	path: `${APP_PREFIX_PATH}/project/issue`,
+					// 	title: 'Issue',
+					// 	translateKey: 'nav.appsProject.issue',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// },
 				]
 			},
 			{

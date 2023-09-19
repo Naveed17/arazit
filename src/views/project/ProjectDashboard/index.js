@@ -9,6 +9,7 @@ import MyTasks from './components/MyTasks'
 import Projects from './components/Projects'
 import Schedule from './components/Schedule'
 import Activities from './components/Activities'
+import Statistic from './components/Statistic'
 import { useDispatch, useSelector } from 'react-redux'
 
 injectReducer('projectDashboard', reducer)
@@ -26,13 +27,14 @@ const ProjectDashboard = () => {
 		projectsData,
 		activitiesData,
 	} = useSelector((state) => state.projectDashboard.data.dashboardData)
+	const statisticData = useSelector((state) => state?.salesDashboard?.data?.dashboardData)
 	const loading = useSelector((state) => state.projectDashboard.data.loading)
 
 	useEffect(() => {
 		fetchData()
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
-	
+
 	const fetchData = () => {
 		dispatch(getProjectDashboardData())
 	}
@@ -40,19 +42,10 @@ const ProjectDashboard = () => {
 	return (
 		<div className="flex flex-col gap-4 h-full">
 			<Loading loading={loading}>
-				<ProjectDashboardHeader data={{userName, taskCount}} />
-				<div className="flex flex-col xl:flex-row gap-4">
-					<div className="flex flex-col gap-4 flex-auto">
-						<TaskOverview data={projectOverviewData} />
-						<MyTasks data={myTasksData} />
-						<Projects data={projectsData} />
-					</div>
-					<div className="flex flex-col gap-4">
-						<div className="xl:w-[380px]">
-							<Schedule data={scheduleData} />
-							<Activities data={activitiesData} />
-						</div>
-					</div>
+				<ProjectDashboardHeader data={{ userName, taskCount }} />
+				<Statistic data={statisticData} />
+				<div className="flex flex-col gap-4 flex-auto">
+					<TaskOverview data={projectOverviewData} />
 				</div>
 			</Loading>
 		</div>

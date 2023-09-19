@@ -6,11 +6,11 @@ import { COLORS } from 'constants/chart.constant'
 import isEmpty from 'lodash/isEmpty'
 import { useSelector } from 'react-redux'
 
-const ChartLegend = ({label, value, badgeClass, showBadge = true}) => {
+const ChartLegend = ({ label, value, badgeClass, showBadge = true }) => {
 
 	return (
 		<div className="flex gap-2">
-			{showBadge && <Badge className="mt-2.5" innerClass={badgeClass}/>}
+			{showBadge && <Badge className="mt-2.5" innerClass={badgeClass} />}
 			<div>
 				<h5 className="font-bold">{value}</h5>
 				<p>{label}</p>
@@ -19,7 +19,7 @@ const ChartLegend = ({label, value, badgeClass, showBadge = true}) => {
 	)
 }
 
-const TaskOverview = ({data = {}, className}) => {
+const TaskOverview = ({ data = {}, className }) => {
 
 	const [timeRange, setTimeRange] = useState(['weekly'])
 
@@ -32,18 +32,18 @@ const TaskOverview = ({data = {}, className}) => {
 		const timer1 = setTimeout(() => setRepaint(false), 300)
 
 		return () => {
-		  	clearTimeout(timer1)
+			clearTimeout(timer1)
 		}
 	}, [data, sideNavCollapse])
-	
+
 
 	return (
 		<Card className={className}>
 			<div className="flex sm:flex-row flex-col md:items-center justify-between mb-6 gap-4">
-				<h4>Task Overview</h4>
-				<Segment 
-					value={timeRange} 
-					onChange={val => setTimeRange(val)} 
+				<h4>Inquiries Created</h4>
+				<Segment
+					value={timeRange}
+					onChange={val => setTimeRange(val)}
 					size="sm"
 				>
 					<Segment.Item value="monthly">Monthly</Segment.Item>
@@ -56,7 +56,7 @@ const TaskOverview = ({data = {}, className}) => {
 					<>
 						<div className="flex items-center justify-between mb-4">
 							<div>
-								<ChartLegend 
+								<ChartLegend
 									showBadge={false}
 									label="Total Tasks"
 									value={data.chart[timeRange[0]].total}
@@ -76,11 +76,11 @@ const TaskOverview = ({data = {}, className}) => {
 							</div>
 						</div>
 						<div>
-							<Chart 
-								series={data.chart[timeRange[0]].series} 
+							<Chart
+								series={data.chart[timeRange[0]].series}
 								xAxis={data.chart[timeRange[0]].range}
 								type="bar"
-								customOptions={{colors: [COLORS[0], COLORS[2]], legend: {show: false}}}
+								customOptions={{ colors: [COLORS[0], COLORS[2]], legend: { show: false } }}
 							/>
 						</div>
 					</>

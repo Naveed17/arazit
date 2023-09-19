@@ -22,7 +22,7 @@ export const apexLineChartDefaultOption = {
 		itemMargin: {
 			vertical: 10
 		},
-		tooltipHoverFormatter: function(val, opts) {
+		tooltipHoverFormatter: function (val, opts) {
 			return val + ' - ' + opts.w.globals.series[opts.seriesIndex][opts.dataPointIndex] + ''
 		}
 	},
@@ -31,7 +31,7 @@ export const apexLineChartDefaultOption = {
 	},
 }
 
-export const apexAreaChartDefaultOption = {...apexLineChartDefaultOption}
+export const apexAreaChartDefaultOption = { ...apexLineChartDefaultOption }
 
 export const apexBarChartDefaultOption = {
 	chart: {
@@ -45,7 +45,7 @@ export const apexBarChartDefaultOption = {
 	plotOptions: {
 		bar: {
 			horizontal: false,
-			columnWidth: '30px',
+			columnWidth: '50px',
 			borderRadius: 2
 		},
 	},
@@ -63,7 +63,7 @@ export const apexBarChartDefaultOption = {
 		itemMargin: {
 			vertical: 10
 		},
-		tooltipHoverFormatter: function(val, opts) {
+		tooltipHoverFormatter: function (val, opts) {
 			return val + ' - ' + opts.w.globals.series[opts.seriesIndex][opts.dataPointIndex] + ''
 		}
 	},
@@ -103,8 +103,8 @@ export const apexDonutChartDefaultOption = {
 			}
 		}
 	},
-	stroke:{
-		colors:['transparent']
+	stroke: {
+		colors: ['transparent']
 	},
 	labels: [],
 	dataLabels: {
@@ -128,10 +128,10 @@ export const apexSparklineChartDefultOption = {
 	},
 	tooltip: {
 		fixed: {
-		  	enabled: false
+			enabled: false
 		},
 		x: {
-		  	show: false
+			show: false
 		},
 		y: {
 			title: {
@@ -141,7 +141,7 @@ export const apexSparklineChartDefultOption = {
 			}
 		},
 		marker: {
-		  show: false
+			show: false
 		}
 	}
 }

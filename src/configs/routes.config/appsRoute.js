@@ -10,27 +10,27 @@ const appsRoute = [
         authority: [ADMIN, USER],
 
     },
-    {
-        key: 'appsProject.projectList',
-        path: `${APP_PREFIX_PATH}/project/project-list`,
-        component: React.lazy(() => import('views/project/ProjectList')),
-        authority: [ADMIN, USER],
-    },
-    {
-        key: 'appsProject.scrumBoard',
-        path: `${APP_PREFIX_PATH}/project/scrum-board`,
-        component: React.lazy(() => import('views/project/ScrumBoard')),
-        authority: [ADMIN, USER],
-        meta: {
-            pageContainerType: 'gutterless'
-        }
-    },
-    {
-        key: 'appsProject.issue',
-        path: `${APP_PREFIX_PATH}/project/issue`,
-        component: React.lazy(() => import('views/project/Issue')),
-        authority: [ADMIN, USER],
-    },
+    // {
+    //     key: 'appsProject.projectList',
+    //     path: `${APP_PREFIX_PATH}/project/project-list`,
+    //     component: React.lazy(() => import('views/project/ProjectList')),
+    //     authority: [ADMIN, USER],
+    // },
+    // {
+    //     key: 'appsProject.scrumBoard',
+    //     path: `${APP_PREFIX_PATH}/project/scrum-board`,
+    //     component: React.lazy(() => import('views/project/ScrumBoard')),
+    //     authority: [ADMIN, USER],
+    //     meta: {
+    //         pageContainerType: 'gutterless'
+    //     }
+    // },
+    // {
+    //     key: 'appsProject.issue',
+    //     path: `${APP_PREFIX_PATH}/project/issue`,
+    //     component: React.lazy(() => import('views/project/Issue')),
+    //     authority: [ADMIN, USER],
+    // },
     {
         key: 'appsCrm.dashboard',
         path: `${APP_PREFIX_PATH}/crm/dashboard`,
@@ -50,7 +50,7 @@ const appsRoute = [
         authority: [ADMIN, USER],
         meta: {
             header: 'Customers',
-            
+
         }
     },
     {
