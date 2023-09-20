@@ -15,7 +15,7 @@ const CrmDashboard = () => {
 
 	const dispatch = useDispatch()
 
-	const { 
+	const {
 		statisticData,
 		leadByRegionData,
 		recentLeadsData,
@@ -27,7 +27,7 @@ const CrmDashboard = () => {
 		fetchData()
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
-	
+
 	const fetchData = () => {
 		dispatch(getCrmDashboardData())
 	}

@@ -14,7 +14,7 @@ const appsNavigationConfig = [
 		subMenu: [
 			{
 				key: 'apps.project',
-				path: `${APP_PREFIX_PATH}/project/dashboard`,
+				path: `${APP_PREFIX_PATH}/dashboard`,
 				title: 'Dashboard',
 				translateKey: 'nav.appsProject.dashboard',
 				icon: 'project',
@@ -64,64 +64,115 @@ const appsNavigationConfig = [
 				]
 			},
 			{
-				key: 'apps.crm',
+				key: 'apps.leads',
 				path: '',
-				title: 'CRM',
-				translateKey: 'nav.appsCrm.crm',
-				icon: 'crm',
+				title: 'Leads',
+				translateKey: 'nav.appsCrypto.leads',
+				icon: 'forms',
 				type: NAV_ITEM_TYPE_COLLAPSE,
 				authority: [ADMIN, USER],
 				subMenu: [
 					{
-						key: 'appsCrm.dashboard',
+						key: 'appsCrypto.leads',
+						path: `${APP_PREFIX_PATH}/leads/dashboard`,
+						title: 'Leads',
+						translateKey: 'nav.appsCrypto.leads',
+						icon: '',
+						type: NAV_ITEM_TYPE_ITEM,
+						authority: [ADMIN, USER],
+						subMenu: []
+					},
+					// {
+					// 	key: 'appsCrypto.portfolio',
+					// 	path: `${APP_PREFIX_PATH}/crypto/portfolio`,
+					// 	title: 'Portfolio',
+					// 	translateKey: 'nav.appsCrypto.portfolio',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// },
+					// {
+					// 	key: 'appsCrypto.market',
+					// 	path: `${APP_PREFIX_PATH}/crypto/market`,
+					// 	title: 'Market',
+					// 	translateKey: 'nav.appsCrypto.market',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// },
+					// {
+					// 	key: 'appsCrypto.wallets',
+					// 	path: `${APP_PREFIX_PATH}/crypto/wallets`,
+					// 	title: 'Wallets',
+					// 	translateKey: 'nav.appsCrypto.wallets',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// },
+				]
+			},
+			{
+				key: 'apps.crm',
+				path: '',
+				title: 'Crm',
+				translateKey: 'nav.appsCrm.crm',
+				icon: 'forms',
+				type: NAV_ITEM_TYPE_COLLAPSE,
+				authority: [ADMIN, USER],
+				subMenu: [
+					{
+						key: 'appsCrm.leads',
 						path: `${APP_PREFIX_PATH}/crm/dashboard`,
-						title: 'Dashboard',
-						translateKey: 'nav.appsCrm.dashboard',
+						title: 'Crm',
+						translateKey: 'nav.appsCrm.crm',
 						icon: '',
 						type: NAV_ITEM_TYPE_ITEM,
 						authority: [ADMIN, USER],
 						subMenu: []
 					},
-					{
-						key: 'appsCrm.calendar',
-						path: `${APP_PREFIX_PATH}/crm/calendar`,
-						title: 'Calendar',
-						translateKey: 'nav.appsCrm.calendar',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'appsCrm.customers',
-						path: `${APP_PREFIX_PATH}/crm/customers`,
-						title: 'Customers',
-						translateKey: 'nav.appsCrm.customers',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'appsCrm.customerDetails',
-						path: `${APP_PREFIX_PATH}/crm/customer-details?id=8`,
-						title: 'Customer Details',
-						translateKey: 'nav.appsCrm.customerDetails',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'appsCrm.mail',
-						path: `${APP_PREFIX_PATH}/crm/mail`,
-						title: 'Mail',
-						translateKey: 'nav.appsCrm.mail',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
+					// {
+					// 	key: 'appsCrm.calendar',
+					// 	path: `${APP_PREFIX_PATH}/crm/calendar`,
+					// 	title: 'Calendar',
+					// 	translateKey: 'nav.appsCrm.calendar',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// },
+					// {
+					// 	key: 'appsCrm.customers',
+					// 	path: `${APP_PREFIX_PATH}/crm/  `,
+					// 	title: 'Customers',
+					// 	translateKey: 'nav.appsCrm.customers',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// },
+					// {
+					// 	key: 'appsCrm.customerDetails',
+					// 	path: `${APP_PREFIX_PATH}/crm/customer-details?id=8`,
+					// 	title: 'Customer Details',
+					// 	translateKey: 'nav.appsCrm.customerDetails',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// },
+					// {
+					// 	key: 'appsCrm.mail',
+					// 	path: `${APP_PREFIX_PATH}/crm/mail`,
+					// 	title: 'Mail',
+					// 	translateKey: 'nav.appsCrm.mail',
+					// 	icon: '',
+					// 	type: NAV_ITEM_TYPE_ITEM,
+					// 	authority: [ADMIN, USER],
+					// 	subMenu: []
+					// },
 				]
 			},
 			{
@@ -195,57 +246,57 @@ const appsNavigationConfig = [
 					},
 				]
 			},
-			{
-				key: 'apps.crypto',
-				path: '',
-				title: 'Crypto',
-				translateKey: 'nav.appsCrypto.crypto',
-				icon: 'crypto',
-				type: NAV_ITEM_TYPE_COLLAPSE,
-				authority: [ADMIN, USER],
-				subMenu: [
-					{
-						key: 'appsCrypto.dashboard',
-						path: `${APP_PREFIX_PATH}/crypto/dashboard`,
-						title: 'Dashboard',
-						translateKey: 'nav.appsCrypto.dashboard',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'appsCrypto.portfolio',
-						path: `${APP_PREFIX_PATH}/crypto/portfolio`,
-						title: 'Portfolio',
-						translateKey: 'nav.appsCrypto.portfolio',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'appsCrypto.market',
-						path: `${APP_PREFIX_PATH}/crypto/market`,
-						title: 'Market',
-						translateKey: 'nav.appsCrypto.market',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'appsCrypto.wallets',
-						path: `${APP_PREFIX_PATH}/crypto/wallets`,
-						title: 'Wallets',
-						translateKey: 'nav.appsCrypto.wallets',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-				]
-			},
+			// {
+			// 	key: 'apps.crypto',
+			// 	path: '',
+			// 	title: 'Crypto',
+			// 	translateKey: 'nav.appsCrypto.crypto',
+			// 	icon: 'crypto',
+			// 	type: NAV_ITEM_TYPE_COLLAPSE,
+			// 	authority: [ADMIN, USER],
+			// 	subMenu: [
+			// 		{
+			// 			key: 'appsCrypto.dashboard',
+			// 			path: `${APP_PREFIX_PATH}/crypto/dashboard`,
+			// 			title: 'Dashboard',
+			// 			translateKey: 'nav.appsCrypto.dashboard',
+			// 			icon: '',
+			// 			type: NAV_ITEM_TYPE_ITEM,
+			// 			authority: [ADMIN, USER],
+			// 			subMenu: []
+			// 		},
+			// 		{
+			// 			key: 'appsCrypto.portfolio',
+			// 			path: `${APP_PREFIX_PATH}/crypto/portfolio`,
+			// 			title: 'Portfolio',
+			// 			translateKey: 'nav.appsCrypto.portfolio',
+			// 			icon: '',
+			// 			type: NAV_ITEM_TYPE_ITEM,
+			// 			authority: [ADMIN, USER],
+			// 			subMenu: []
+			// 		},
+			// 		{
+			// 			key: 'appsCrypto.market',
+			// 			path: `${APP_PREFIX_PATH}/crypto/market`,
+			// 			title: 'Market',
+			// 			translateKey: 'nav.appsCrypto.market',
+			// 			icon: '',
+			// 			type: NAV_ITEM_TYPE_ITEM,
+			// 			authority: [ADMIN, USER],
+			// 			subMenu: []
+			// 		},
+			// 		{
+			// 			key: 'appsCrypto.wallets',
+			// 			path: `${APP_PREFIX_PATH}/crypto/wallets`,
+			// 			title: 'Wallets',
+			// 			translateKey: 'nav.appsCrypto.wallets',
+			// 			icon: '',
+			// 			type: NAV_ITEM_TYPE_ITEM,
+			// 			authority: [ADMIN, USER],
+			// 			subMenu: []
+			// 		},
+			// 	]
+			// },
 			{
 				key: 'apps.knowledgeBase',
 				path: '',

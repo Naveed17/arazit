@@ -5,7 +5,7 @@ import { ADMIN, USER } from 'constants/roles.constant'
 const appsRoute = [
     {
         key: 'appsProject.dashboard',
-        path: `${APP_PREFIX_PATH}/project/dashboard`,
+        path: `${APP_PREFIX_PATH}/dashboard`,
         component: React.lazy(() => import('views/project/ProjectDashboard')),
         authority: [ADMIN, USER],
 
@@ -127,7 +127,7 @@ const appsRoute = [
     },
     {
         key: 'appsCrypto.dashboard',
-        path: `${APP_PREFIX_PATH}/crypto/dashboard`,
+        path: `${APP_PREFIX_PATH}/leads/dashboard`,
         component: React.lazy(() => import('views/crypto/CryptoDashboard')),
         authority: [ADMIN, USER],
     },

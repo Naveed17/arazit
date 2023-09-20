@@ -1,33 +1,26 @@
 import React, { useEffect } from 'react'
 import reducer from './store'
+import salesReducer from '../../sales/SalesDashboard/store'
+import { getSalesDashboardData } from '../../sales/SalesDashboard/store/dataSlice'
 import { injectReducer } from 'store/index'
 import { getProjectDashboardData } from './store/dataSlice'
 import { Loading } from 'components/shared'
 import ProjectDashboardHeader from './components/ProjectDashboardHeader'
 import TaskOverview from './components/TaskOverview'
-import MyTasks from './components/MyTasks'
-import Projects from './components/Projects'
-import Schedule from './components/Schedule'
-import Activities from './components/Activities'
 import Statistic from './components/Statistic'
 import { useDispatch, useSelector } from 'react-redux'
 
 injectReducer('projectDashboard', reducer)
-
+injectReducer('salesDashboard', salesReducer)
 const ProjectDashboard = () => {
 
 	const dispatch = useDispatch()
 
 	const {
-		userName,
-		taskCount,
 		projectOverviewData,
-		myTasksData,
-		scheduleData,
-		projectsData,
-		activitiesData,
 	} = useSelector((state) => state.projectDashboard.data.dashboardData)
-	const statisticData = useSelector((state) => state?.salesDashboard?.data?.dashboardData)
+	const { statisticData } = useSelector((state) => state?.salesDashboard?.data?.dashboardData)
+
 	const loading = useSelector((state) => state.projectDashboard.data.loading)
 
 	useEffect(() => {
@@ -37,12 +30,13 @@ const ProjectDashboard = () => {
 
 	const fetchData = () => {
 		dispatch(getProjectDashboardData())
+		dispatch(getSalesDashboardData())
 	}
 
 	return (
 		<div className="flex flex-col gap-4 h-full">
 			<Loading loading={loading}>
-				<ProjectDashboardHeader data={{ userName, taskCount }} />
+				<ProjectDashboardHeader />
 				<Statistic data={statisticData} />
 				<div className="flex flex-col gap-4 flex-auto">
 					<TaskOverview data={projectOverviewData} />

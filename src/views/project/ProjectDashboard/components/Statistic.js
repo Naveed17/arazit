@@ -19,7 +19,7 @@ const StatisticCard = ({ data = {}, label, valuePrefix, date }) => {
 							prefix={valuePrefix}
 						/>
 					</h3>
-					<p>vs. 3 months prior to <span className="font-semibold">{dayjs(date).format('DD MMM')}</span></p>
+
 				</div>
 				<GrowShrinkTag value={data?.growShrink} suffix="%" />
 			</div>
@@ -32,24 +32,31 @@ const Statistic = ({ data = {} }) => {
 	const startDate = useSelector((state) => state.projectDashboard.state.startDate)
 
 	return (
-		<div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+		<div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
 			<StatisticCard
 				data={data?.revenue}
 				valuePrefix="$"
-				label="Revenue"
+				label="Leads"
 				tagSuffix="%"
 				date={startDate}
 			/>
 			<StatisticCard
 				data={data?.orders}
-				label="Orders"
+				label="Followup"
 				tagSuffix="%"
 				date={startDate}
 			/>
 			<StatisticCard
 				data={data?.purchases}
 				valuePrefix="$"
-				label="Purchases"
+				label="Pre-Sales"
+				tagSuffix="%"
+				date={startDate}
+			/>
+			<StatisticCard
+				data={data?.purchases}
+				valuePrefix="$"
+				label="Sales"
 				tagSuffix="%"
 				date={startDate}
 			/>
