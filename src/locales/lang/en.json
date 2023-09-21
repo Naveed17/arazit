@@ -18,6 +18,10 @@
             "crmCategories": "Crm Categories",
             "category": "Category"
         },
+        "appReports": {
+            "reports": "Reports",
+            "leads": "Leads"
+        },
         "appsSales": {
             "sales": "Sales",
             "dashboard": "Dashboard",

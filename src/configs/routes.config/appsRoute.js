@@ -38,6 +38,12 @@ const appsRoute = [
         authority: [ADMIN, USER],
     },
     {
+        key: 'appsReports.leads',
+        path: `${APP_PREFIX_PATH}/reports/leads`,
+        component: React.lazy(() => import('views/reports/Leads')),
+        authority: [ADMIN, USER],
+    },
+    {
         key: 'appsCrm.calendar',
         path: `${APP_PREFIX_PATH}/crm/calendar`,
         component: React.lazy(() => import('views/crm/Calendar')),

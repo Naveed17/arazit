@@ -13,7 +13,7 @@ const appsNavigationConfig = [
 		authority: [ADMIN, USER],
 		subMenu: [
 			{
-				key: 'apps.project',
+				key: 'appsProject.dashboard',
 				path: `${APP_PREFIX_PATH}/dashboard`,
 				title: 'Dashboard',
 				translateKey: 'nav.appsProject.dashboard',
@@ -73,7 +73,7 @@ const appsNavigationConfig = [
 				authority: [ADMIN, USER],
 				subMenu: [
 					{
-						key: 'appsCrypto.leads',
+						key: 'apps.leads',
 						path: `${APP_PREFIX_PATH}/leads/dashboard`,
 						title: 'Leads',
 						translateKey: 'nav.appsCrypto.leads',
@@ -173,6 +173,28 @@ const appsNavigationConfig = [
 					// 	authority: [ADMIN, USER],
 					// 	subMenu: []
 					// },
+				]
+			},
+			{
+				key: 'apps.reports',
+				path: '',
+				title: 'Reports',
+				translateKey: 'appsReports.reports',
+				icon: 'sales',
+				type: NAV_ITEM_TYPE_COLLAPSE,
+				authority: [ADMIN, USER],
+				subMenu: [
+					{
+						key: 'appsReports.leads',
+						path: `${APP_PREFIX_PATH}/reports/leads`,
+						title: 'Leads',
+						translateKey: 'appsReports.leads',
+						icon: '',
+						type: NAV_ITEM_TYPE_ITEM,
+						authority: [ADMIN, USER],
+						subMenu: []
+					},
+
 				]
 			},
 			{
