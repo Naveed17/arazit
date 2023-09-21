@@ -117,17 +117,17 @@ const appsNavigationConfig = [
 			{
 				key: 'apps.crm',
 				path: '',
-				title: 'Crm',
-				translateKey: 'nav.appsCrm.crm',
-				icon: 'forms',
+				title: 'Crm Categories',
+				translateKey: 'nav.appsCrm.crmCategories',
+				icon: 'sharedComponentDoc',
 				type: NAV_ITEM_TYPE_COLLAPSE,
 				authority: [ADMIN, USER],
 				subMenu: [
 					{
 						key: 'appsCrm.leads',
 						path: `${APP_PREFIX_PATH}/crm/dashboard`,
-						title: 'Crm',
-						translateKey: 'nav.appsCrm.crm',
+						title: 'Category',
+						translateKey: 'nav.appsCrm.category',
 						icon: '',
 						type: NAV_ITEM_TYPE_ITEM,
 						authority: [ADMIN, USER],

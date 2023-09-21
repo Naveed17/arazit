@@ -1,21 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import { Loading } from 'components/shared'
-import { Input, Select, DatePicker, Button } from 'components/ui'
-
-const colourOptions = [
-	{ value: 'ocean', label: 'Ocean', color: '#00B8D9' },
-	{ value: 'blue', label: 'Blue', color: '#0052CC' },
-	{ value: 'purple', label: 'Purple', color: '#5243AA' },
-	{ value: 'red', label: 'Red', color: '#FF5630' },
-	{ value: 'orange', label: 'Orange', color: '#FF8B00' },
-	{ value: 'yellow', label: 'Yellow', color: '#FFC400' },
-	{ value: 'green', label: 'Green', color: '#36B37E' },
-	{ value: 'forest', label: 'Forest', color: '#00875A' },
-	{ value: 'slate', label: 'Slate', color: '#253858' },
-	{ value: 'silver', label: 'Silver', color: '#666666' },
-]
+import { Input, Select, DatePicker, Button, } from 'components/ui'
+import { DataTable } from 'components/shared'
+import { colourOptions, data10 } from './components/data'
+import useThemeClass from 'utils/hooks/useThemeClass'
+import { HiOutlinePencil, HiOutlineTrash } from 'react-icons/hi'
+import TableTools from './components/TableTools';
+const ActionColumn = () => {
+	const { textTheme } = useThemeClass()
+	const onEdit = () => {
+	}
+	const onDelete = () => {
+	}
+	return (
+		<div className="flex justify-end text-lg">
+			<span className={`cursor-pointer p-2 hover:${textTheme}`} onClick={onEdit}>
+				<HiOutlinePencil />
+			</span>
+			<span className="cursor-pointer p-2 hover:text-red-500" onClick={onDelete}>
+				<HiOutlineTrash />
+			</span>
+		</div>
+	)
+}
 const CryptoDashboard = () => {
-
 	const [state, setState] = useState({
 		product: "",
 		start_date: new Date(),
@@ -26,7 +34,49 @@ const CryptoDashboard = () => {
 		users: "",
 		marketing: ""
 	})
-	console.log(state)
+	const columns = useMemo(() => [
+		{
+			Header: 'Name',
+			accessor: 'name',
+			sortable: false,
+
+		},
+		{
+			Header: 'Phone',
+			accessor: 'phone',
+			sortable: false,
+
+		},
+		{
+			Header: 'Status',
+			accessor: 'status',
+			sortable: false,
+		},
+		{
+			Header: 'Type',
+			accessor: 'type',
+			sortable: false,
+
+		},
+		{
+			Header: 'Product',
+			accessor: 'product',
+			sortable: false,
+
+		},
+		{
+			Header: 'Assigned User',
+			accessor: 'assignedUser',
+			sortable: false,
+
+		},
+		{
+			Header: 'Edit',
+			id: 'action',
+			accessor: (row) => row,
+			Cell: props => <ActionColumn row={props.id} />
+		},
+	], [])
 	return (
 		<div className="flex flex-col gap-4 h-full">
 			<Loading loading={false}>
@@ -87,10 +137,25 @@ const CryptoDashboard = () => {
 							setState({ ...state, end_date_date: date })}
 
 					/>
-					<Button size="sm" variant="solid" className="!rounded-lg">Submit</Button>
+					<Button size="sm" variant="solid" className="!rounded-lg place-self-start px-10">Submit</Button>
 				</div>
-			</Loading >
-		</div >
+				<div className="flex flex-col gap-4">
+					<TableTools />
+
+					<DataTable columns={columns}
+						data={data10}
+						selectable
+						skeletonAvatarColumns={[0]}
+						skeletonAvatarProps={{ className: 'rounded-md' }}
+						pagingData={{ pageIndex: 0, pageSize: 10, total: data10.length }}
+						pagination
+					/>
+
+				</div>
+
+
+			</Loading>
+		</div>
 	)
 }
 
