@@ -32,8 +32,8 @@ const appsRoute = [
     //     authority: [ADMIN, USER],
     // },
     {
-        key: 'appsCrm.dashboard',
-        path: `${APP_PREFIX_PATH}/crm/dashboard`,
+        key: 'appsCrm.category',
+        path: `${APP_PREFIX_PATH}/crm/category`,
         component: React.lazy(() => import('views/crm/CrmDashboard')),
         authority: [ADMIN, USER],
     },
@@ -41,6 +41,12 @@ const appsRoute = [
         key: 'appsReports.leads',
         path: `${APP_PREFIX_PATH}/reports/leads`,
         component: React.lazy(() => import('views/reports/Leads')),
+        authority: [ADMIN, USER],
+    },
+    {
+        key: 'appsReports.marketing',
+        path: `${APP_PREFIX_PATH}/reports/marketing`,
+        component: React.lazy(() => import('views/reports/Marketing')),
         authority: [ADMIN, USER],
     },
     {
@@ -132,8 +138,8 @@ const appsRoute = [
         authority: [ADMIN, USER],
     },
     {
-        key: 'appsCrypto.dashboard',
-        path: `${APP_PREFIX_PATH}/leads/dashboard`,
+        key: 'appsLeads.dashboard',
+        path: `${APP_PREFIX_PATH}/leads`,
         component: React.lazy(() => import('views/crypto/CryptoDashboard')),
         authority: [ADMIN, USER],
     },

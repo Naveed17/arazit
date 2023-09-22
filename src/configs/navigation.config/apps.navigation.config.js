@@ -73,8 +73,8 @@ const appsNavigationConfig = [
 				authority: [ADMIN, USER],
 				subMenu: [
 					{
-						key: 'apps.leads',
-						path: `${APP_PREFIX_PATH}/leads/dashboard`,
+						key: 'appsLeads.dashboard',
+						path: `${APP_PREFIX_PATH}/leads`,
 						title: 'Leads',
 						translateKey: 'nav.appsCrypto.leads',
 						icon: '',
@@ -124,10 +124,10 @@ const appsNavigationConfig = [
 				authority: [ADMIN, USER],
 				subMenu: [
 					{
-						key: 'appsCrm.leads',
-						path: `${APP_PREFIX_PATH}/crm/dashboard`,
+						key: 'appsCrm.category',
+						path: `${APP_PREFIX_PATH}/crm/category`,
 						title: 'Category',
-						translateKey: 'nav.appsCrm.category',
+						translateKey: 'appsCrm.category',
 						icon: '',
 						type: NAV_ITEM_TYPE_ITEM,
 						authority: [ADMIN, USER],
@@ -189,6 +189,16 @@ const appsNavigationConfig = [
 						path: `${APP_PREFIX_PATH}/reports/leads`,
 						title: 'Leads',
 						translateKey: 'appsReports.leads',
+						icon: '',
+						type: NAV_ITEM_TYPE_ITEM,
+						authority: [ADMIN, USER],
+						subMenu: []
+					},
+					{
+						key: 'appsReports.marketing',
+						path: `${APP_PREFIX_PATH}/reports/marketing`,
+						title: 'Marketing',
+						translateKey: 'appsReports.marketing',
 						icon: '',
 						type: NAV_ITEM_TYPE_ITEM,
 						authority: [ADMIN, USER],
