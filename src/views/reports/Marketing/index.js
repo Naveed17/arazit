@@ -158,7 +158,6 @@ const Marketing = () => {
 
 
                     />
-
                     <div className="flex flex-col gap-4">
                         <TableTools />
                         <DataTable columns={columns}
@@ -171,8 +170,6 @@ const Marketing = () => {
                         />
                     </div>
                 </div>
-
-
             </Loading>
         </div>
     )
