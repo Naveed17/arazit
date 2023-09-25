@@ -80,7 +80,7 @@ const CryptoDashboard = () => {
 	return (
 		<div className="flex flex-col gap-4 h-full">
 			<Loading loading={false}>
-				<div className="grid grid-cols-1 xl:grid-cols-4 gap-4 gap-y-8">
+				<div className="grid grid-cols-1 xl:grid-cols-4 gap-4 xl:gap-y-8">
 					<Input
 						onChange={(e) => setState({
 							...state,
