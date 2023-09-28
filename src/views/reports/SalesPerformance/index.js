@@ -45,7 +45,7 @@ function SalesPerformance() {
                     <Button size="sm" variant="solid" className="!rounded-lg place-self-start px-10">Submit</Button>
                 </div>
                 <Statistic data={StatisticData} />
-                <div className='grid grid-cols-1 xl:grid-cols-4 gap-4 mt-5'>
+                <div className='grid grid-cols-1 xl:grid-cols-4 gap-4'>
                     <DataCard />
                     <DataCard />
                 </div>
