@@ -175,6 +175,16 @@ const appsNavigationConfig = [
 						authority: [ADMIN, USER],
 						subMenu: []
 					},
+					{
+						key: 'appsReports.salesPerformance',
+						path: `${APP_PREFIX_PATH}/reports/sales-performance`,
+						title: 'Sales Performance',
+						translateKey: 'appsReports.salesPerformance',
+						icon: '',
+						type: NAV_ITEM_TYPE_ITEM,
+						authority: [ADMIN, USER],
+						subMenu: []
+					},
 
 				]
 			},

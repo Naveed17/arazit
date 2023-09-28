@@ -16,14 +16,16 @@ export const StatisticData = {
     revenue: {
         value: 218.13,
         growShrink: 11.4,
-        description: "unique activities over leads"
+        description: "unique activities over Leads"
     },
     orders: {
         value: 175,
-        growShrink: -3.2
+        growShrink: -3.2,
+        description: "reply over new Lead"
     },
     purchases: {
         value: 72.31,
-        growShrink: 5.7
+        growShrink: 5.7,
+        description: "fall in pending Tickets"
     },
 }

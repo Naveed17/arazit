@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { Loading } from 'components/shared'
 import { Select, DatePicker, Button, } from 'components/ui'
-import { colourOptions, StatisticData } from './components/data'
+import { colourOptions, StatisticData, overviewData } from './components/data'
 import Statistic from './components/Statistic'
-import TimeLine from './components/TimeLine'
+import DataCard from './components/DataCard'
+import Overview from './components/Overview'
 
-function ActivityLogs() {
+function SalesPerformance() {
     const [state, setState] = useState({
         start_date: new Date(),
         end_date: new Date(),
@@ -15,7 +16,7 @@ function ActivityLogs() {
     return (
         <div className="flex flex-col gap-4 h-full">
             <Loading loading={false}>
-                <p className="font-semibold mb-10">Activity <span className='text-gray-400 text-xs'>Report</span></p>
+                <p className="font-semibold mb-10 text-black text-[17px]">User Sales Performance</p>
                 <div className="grid grid-cols-1 xl:grid-cols-4 gap-4">
                     <Select
 
@@ -43,17 +44,17 @@ function ActivityLogs() {
                     />
                     <Button size="sm" variant="solid" className="!rounded-lg place-self-start px-10">Submit</Button>
                 </div>
-                <div className='flex items-center'>
-                    <p className="font-semibold text-lg">User Name <span className='text-gray-400 italic text-xs ml-4 font-normal'>Report: 01/06/2023 - 02/06/2023</span></p>
+                <Statistic data={StatisticData} />
+                <div className='grid grid-cols-1 xl:grid-cols-4 gap-4 mt-5'>
+                    <DataCard />
+                    <DataCard />
                 </div>
-                <div className="mb-5">
-                    <Statistic data={StatisticData} />
-                </div>
-                <p className="font-semibold text-[18px]">Activity Log</p>
-                <TimeLine />
+                <Overview data={overviewData} />
+
+
             </Loading>
         </div>
     )
 }
 
-export default ActivityLogs
+export default SalesPerformance
