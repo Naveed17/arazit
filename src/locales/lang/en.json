@@ -20,7 +20,9 @@
         },
         "appReports": {
             "reports": "Reports",
-            "leads": "Leads"
+            "leads": "Leads",
+            "marketing": "Marketing",
+            "activityLogs": "Activity Logs"
         },
         "appsSales": {
             "sales": "Sales",

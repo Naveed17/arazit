@@ -133,46 +133,7 @@ const appsNavigationConfig = [
 						authority: [ADMIN, USER],
 						subMenu: []
 					},
-					// {
-					// 	key: 'appsCrm.calendar',
-					// 	path: `${APP_PREFIX_PATH}/crm/calendar`,
-					// 	title: 'Calendar',
-					// 	translateKey: 'nav.appsCrm.calendar',
-					// 	icon: '',
-					// 	type: NAV_ITEM_TYPE_ITEM,
-					// 	authority: [ADMIN, USER],
-					// 	subMenu: []
-					// },
-					// {
-					// 	key: 'appsCrm.customers',
-					// 	path: `${APP_PREFIX_PATH}/crm/  `,
-					// 	title: 'Customers',
-					// 	translateKey: 'nav.appsCrm.customers',
-					// 	icon: '',
-					// 	type: NAV_ITEM_TYPE_ITEM,
-					// 	authority: [ADMIN, USER],
-					// 	subMenu: []
-					// },
-					// {
-					// 	key: 'appsCrm.customerDetails',
-					// 	path: `${APP_PREFIX_PATH}/crm/customer-details?id=8`,
-					// 	title: 'Customer Details',
-					// 	translateKey: 'nav.appsCrm.customerDetails',
-					// 	icon: '',
-					// 	type: NAV_ITEM_TYPE_ITEM,
-					// 	authority: [ADMIN, USER],
-					// 	subMenu: []
-					// },
-					// {
-					// 	key: 'appsCrm.mail',
-					// 	path: `${APP_PREFIX_PATH}/crm/mail`,
-					// 	title: 'Mail',
-					// 	translateKey: 'nav.appsCrm.mail',
-					// 	icon: '',
-					// 	type: NAV_ITEM_TYPE_ITEM,
-					// 	authority: [ADMIN, USER],
-					// 	subMenu: []
-					// },
+
 				]
 			},
 			{
@@ -199,6 +160,16 @@ const appsNavigationConfig = [
 						path: `${APP_PREFIX_PATH}/reports/marketing`,
 						title: 'Marketing',
 						translateKey: 'appsReports.marketing',
+						icon: '',
+						type: NAV_ITEM_TYPE_ITEM,
+						authority: [ADMIN, USER],
+						subMenu: []
+					},
+					{
+						key: 'appsReports.activityLogs',
+						path: `${APP_PREFIX_PATH}/reports/activity-logs`,
+						title: 'Activity Logs',
+						translateKey: 'appsReports.activityLogs',
 						icon: '',
 						type: NAV_ITEM_TYPE_ITEM,
 						authority: [ADMIN, USER],

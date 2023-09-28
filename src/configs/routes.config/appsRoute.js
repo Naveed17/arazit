@@ -10,27 +10,6 @@ const appsRoute = [
         authority: [ADMIN, USER],
 
     },
-    // {
-    //     key: 'appsProject.projectList',
-    //     path: `${APP_PREFIX_PATH}/project/project-list`,
-    //     component: React.lazy(() => import('views/project/ProjectList')),
-    //     authority: [ADMIN, USER],
-    // },
-    // {
-    //     key: 'appsProject.scrumBoard',
-    //     path: `${APP_PREFIX_PATH}/project/scrum-board`,
-    //     component: React.lazy(() => import('views/project/ScrumBoard')),
-    //     authority: [ADMIN, USER],
-    //     meta: {
-    //         pageContainerType: 'gutterless'
-    //     }
-    // },
-    // {
-    //     key: 'appsProject.issue',
-    //     path: `${APP_PREFIX_PATH}/project/issue`,
-    //     component: React.lazy(() => import('views/project/Issue')),
-    //     authority: [ADMIN, USER],
-    // },
     {
         key: 'appsCrm.category',
         path: `${APP_PREFIX_PATH}/crm/category`,
@@ -47,6 +26,12 @@ const appsRoute = [
         key: 'appsReports.marketing',
         path: `${APP_PREFIX_PATH}/reports/marketing`,
         component: React.lazy(() => import('views/reports/Marketing')),
+        authority: [ADMIN, USER],
+    },
+    {
+        key: 'appsReports.activityLogs',
+        path: `${APP_PREFIX_PATH}/reports/activity-logs`,
+        component: React.lazy(() => import('views/reports/ActivityLogs')),
         authority: [ADMIN, USER],
     },
     {
