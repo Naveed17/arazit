@@ -131,13 +131,23 @@ const appsNavigationConfig = [
 					{
 						key: 'appsUsers.allUsers',
 						path: `${APP_PREFIX_PATH}/users/all-users`,
-						title: 'Dashboard',
+						title: 'All Users',
 						translateKey: 'nav.appsUsers.allUsers',
 						icon: '',
 						type: NAV_ITEM_TYPE_ITEM,
 						authority: [ADMIN, USER],
 						subMenu: []
 					},
+					{
+						key: 'appsUsers.clients',
+						path: `${APP_PREFIX_PATH}/users/clients`,
+						title: 'Clients',
+						translateKey: 'nav.appsUsers.clients',
+						icon: '',
+						type: NAV_ITEM_TYPE_ITEM,
+						authority: [ADMIN, USER],
+						subMenu: []
+					}
 				]
 			},
 			{

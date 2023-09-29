@@ -26,7 +26,8 @@
         },
         "appsUsers": {
             "users": "Users",
-            "allUsers": "All Users"
+            "allUsers": "All Users",
+            "clients": "Clients"
         },
         "appsSales": {
             "sales": "Sales",
