@@ -41,6 +41,12 @@ const appsRoute = [
         authority: [ADMIN, USER],
     },
     {
+        key: 'appsUsers.allUsers',
+        path: `${APP_PREFIX_PATH}/users/all-users`,
+        component: React.lazy(() => import('views/users/Allusers')),
+        authority: [ADMIN, USER],
+    },
+    {
         key: 'appsCrm.calendar',
         path: `${APP_PREFIX_PATH}/crm/calendar`,
         component: React.lazy(() => import('views/crm/Calendar')),

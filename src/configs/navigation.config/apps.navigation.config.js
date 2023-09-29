@@ -21,46 +21,7 @@ const appsNavigationConfig = [
 				type: NAV_ITEM_TYPE_COLLAPSE,
 				authority: [ADMIN, USER],
 				subMenu: [
-					// {
-					// 	key: 'appsProject.dashboard',
-					// 	path: `${APP_PREFIX_PATH}/project/dashboard`,
-					// 	title: 'Dashboard',
-					// 	translateKey: 'nav.appsProject.dashboard',
-					// 	icon: '',
-					// 	type: NAV_ITEM_TYPE_ITEM,
-					// 	authority: [ADMIN, USER],
-					// 	subMenu: []
-					// },
-					// {
-					// 	key: 'appsProject.projectList',
-					// 	path: `${APP_PREFIX_PATH}/project/project-list`,
-					// 	title: 'Project List',
-					// 	translateKey: 'nav.appsProject.projectList',
-					// 	icon: '',
-					// 	type: NAV_ITEM_TYPE_ITEM,
-					// 	authority: [ADMIN, USER],
-					// 	subMenu: []
-					// },
-					// {
-					// 	key: 'appsProject.scrumBoard',
-					// 	path: `${APP_PREFIX_PATH}/project/scrum-board`,
-					// 	title: 'Scrum Board',
-					// 	translateKey: 'nav.appsProject.scrumBoard',
-					// 	icon: '',
-					// 	type: NAV_ITEM_TYPE_ITEM,
-					// 	authority: [ADMIN, USER],
-					// 	subMenu: []
-					// },
-					// {
-					// 	key: 'appsProject.issue',
-					// 	path: `${APP_PREFIX_PATH}/project/issue`,
-					// 	title: 'Issue',
-					// 	translateKey: 'nav.appsProject.issue',
-					// 	icon: '',
-					// 	type: NAV_ITEM_TYPE_ITEM,
-					// 	authority: [ADMIN, USER],
-					// 	subMenu: []
-					// },
+
 				]
 			},
 			{
@@ -82,36 +43,6 @@ const appsNavigationConfig = [
 						authority: [ADMIN, USER],
 						subMenu: []
 					},
-					// {
-					// 	key: 'appsCrypto.portfolio',
-					// 	path: `${APP_PREFIX_PATH}/crypto/portfolio`,
-					// 	title: 'Portfolio',
-					// 	translateKey: 'nav.appsCrypto.portfolio',
-					// 	icon: '',
-					// 	type: NAV_ITEM_TYPE_ITEM,
-					// 	authority: [ADMIN, USER],
-					// 	subMenu: []
-					// },
-					// {
-					// 	key: 'appsCrypto.market',
-					// 	path: `${APP_PREFIX_PATH}/crypto/market`,
-					// 	title: 'Market',
-					// 	translateKey: 'nav.appsCrypto.market',
-					// 	icon: '',
-					// 	type: NAV_ITEM_TYPE_ITEM,
-					// 	authority: [ADMIN, USER],
-					// 	subMenu: []
-					// },
-					// {
-					// 	key: 'appsCrypto.wallets',
-					// 	path: `${APP_PREFIX_PATH}/crypto/wallets`,
-					// 	title: 'Wallets',
-					// 	translateKey: 'nav.appsCrypto.wallets',
-					// 	icon: '',
-					// 	type: NAV_ITEM_TYPE_ITEM,
-					// 	authority: [ADMIN, USER],
-					// 	subMenu: []
-					// },
 				]
 			},
 			{
@@ -189,6 +120,27 @@ const appsNavigationConfig = [
 				]
 			},
 			{
+				key: 'apps.users',
+				path: '',
+				title: 'Users',
+				translateKey: 'nav.appsUsers.users',
+				icon: 'crm',
+				type: NAV_ITEM_TYPE_COLLAPSE,
+				authority: [ADMIN, USER],
+				subMenu: [
+					{
+						key: 'appsUsers.allUsers',
+						path: `${APP_PREFIX_PATH}/users/all-users`,
+						title: 'Dashboard',
+						translateKey: 'nav.appsUsers.allUsers',
+						icon: '',
+						type: NAV_ITEM_TYPE_ITEM,
+						authority: [ADMIN, USER],
+						subMenu: []
+					},
+				]
+			},
+			{
 				key: 'apps.sales',
 				path: '',
 				title: 'Sales',
@@ -259,57 +211,6 @@ const appsNavigationConfig = [
 					},
 				]
 			},
-			// {
-			// 	key: 'apps.crypto',
-			// 	path: '',
-			// 	title: 'Crypto',
-			// 	translateKey: 'nav.appsCrypto.crypto',
-			// 	icon: 'crypto',
-			// 	type: NAV_ITEM_TYPE_COLLAPSE,
-			// 	authority: [ADMIN, USER],
-			// 	subMenu: [
-			// 		{
-			// 			key: 'appsCrypto.dashboard',
-			// 			path: `${APP_PREFIX_PATH}/crypto/dashboard`,
-			// 			title: 'Dashboard',
-			// 			translateKey: 'nav.appsCrypto.dashboard',
-			// 			icon: '',
-			// 			type: NAV_ITEM_TYPE_ITEM,
-			// 			authority: [ADMIN, USER],
-			// 			subMenu: []
-			// 		},
-			// 		{
-			// 			key: 'appsCrypto.portfolio',
-			// 			path: `${APP_PREFIX_PATH}/crypto/portfolio`,
-			// 			title: 'Portfolio',
-			// 			translateKey: 'nav.appsCrypto.portfolio',
-			// 			icon: '',
-			// 			type: NAV_ITEM_TYPE_ITEM,
-			// 			authority: [ADMIN, USER],
-			// 			subMenu: []
-			// 		},
-			// 		{
-			// 			key: 'appsCrypto.market',
-			// 			path: `${APP_PREFIX_PATH}/crypto/market`,
-			// 			title: 'Market',
-			// 			translateKey: 'nav.appsCrypto.market',
-			// 			icon: '',
-			// 			type: NAV_ITEM_TYPE_ITEM,
-			// 			authority: [ADMIN, USER],
-			// 			subMenu: []
-			// 		},
-			// 		{
-			// 			key: 'appsCrypto.wallets',
-			// 			path: `${APP_PREFIX_PATH}/crypto/wallets`,
-			// 			title: 'Wallets',
-			// 			translateKey: 'nav.appsCrypto.wallets',
-			// 			icon: '',
-			// 			type: NAV_ITEM_TYPE_ITEM,
-			// 			authority: [ADMIN, USER],
-			// 			subMenu: []
-			// 		},
-			// 	]
-			// },
 			{
 				key: 'apps.knowledgeBase',
 				path: '',

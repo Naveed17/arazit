@@ -1,21 +1,21 @@
 import React from 'react'
 import {
-	HiOutlineChartSquareBar,
-	HiOutlineUserGroup,
-	HiOutlineTrendingUp,
-	HiOutlineUserCircle,
-	HiOutlineBookOpen,
-	HiOutlineCurrencyDollar,
+    HiOutlineChartSquareBar,
+    HiOutlineUserGroup,
+    HiOutlineTrendingUp,
+    HiOutlineUserCircle,
+    HiOutlineBookOpen,
+    HiOutlineCurrencyDollar,
     HiOutlineShieldCheck,
-    HiOutlineColorSwatch, 
-	HiOutlineChatAlt,
-	HiOutlineDesktopComputer,
-	HiOutlinePaperAirplane,
-	HiOutlineChartPie,
-	HiOutlineUserAdd,
-	HiOutlineKey,
+    HiOutlineColorSwatch,
+    HiOutlineChatAlt,
+    HiOutlineDesktopComputer,
+    HiOutlinePaperAirplane,
+    HiOutlineChartPie,
+    HiOutlineUserAdd,
+    HiOutlineKey,
     HiOutlineBan,
-	HiOutlineHand,
+    HiOutlineHand,
     HiOutlineDocumentText,
     HiOutlineTemplate,
     HiOutlineLockClosed,
@@ -23,7 +23,7 @@ import {
     HiOutlineViewGridAdd,
     HiOutlineShare,
     HiOutlineVariable,
-    HiOutlineCode
+    HiOutlineCode,
 } from 'react-icons/hi'
 
 const navigationIcon = {
@@ -53,7 +53,7 @@ const navigationIcon = {
     documentation: <HiOutlineDocumentText />,
     sharedComponentDoc: <HiOutlineShare />,
     utilsDoc: <HiOutlineVariable />,
-    changeLog: <HiOutlineCode />
+    changeLog: <HiOutlineCode />,
 }
 
 export default navigationIcon

@@ -18,11 +18,15 @@
             "crmCategories": "Crm Categories",
             "category": "Category"
         },
-        "appReports": {
+        "appsReports": {
             "reports": "Reports",
             "leads": "Leads",
             "marketing": "Marketing",
             "activityLogs": "Activity Logs"
+        },
+        "appsUsers": {
+            "users": "Users",
+            "allUsers": "All Users"
         },
         "appsSales": {
             "sales": "Sales",
