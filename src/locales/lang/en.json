@@ -29,15 +29,6 @@
             "allUsers": "All Users",
             "clients": "Clients"
         },
-        "appsSales": {
-            "sales": "Sales",
-            "dashboard": "Dashboard",
-            "productList": "Product List",
-            "productEdit": "Product Edit",
-            "productNew": "New Product",
-            "orderList": "Order List",
-            "orderDetails": "Order Details"
-        },
         "appsCrypto": {
             "crypto": "Crypto",
             "dashboard": "Dashboard",
@@ -45,19 +36,11 @@
             "market": "Market",
             "wallets": "Wallets"
         },
-        "appsknowledgeBase": {
-            "knowledgeBase": "Knowledge Base",
-            "helpCenter": "Help Center",
-            "article": "Article",
-            "manageArticles": "Manage Articles",
-            "editArticle": "Edit Article"
-        },
         "appsAccount": {
             "account": "Account",
             "settings": "Settings",
-            "invoice": "Invoice",
-            "activityLog": "Activity Log",
-            "kycForm": "KYC Form"
+            "invoices": "Invoices",
+            "revenue": "Revenue"
         },
         "uiComponents": "UI Components",
         "uiComponentsCommon": {

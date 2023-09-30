@@ -1,0 +1,3 @@
+.table-default thead>tr>th {
+    text-transform: capitalize;
+}

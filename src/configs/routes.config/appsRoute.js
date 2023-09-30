@@ -183,29 +183,6 @@ const appsRoute = [
         }
     },
     {
-        key: 'appsknowledgeBase.article',
-        path: `${APP_PREFIX_PATH}/knowledge-base/article`,
-        component: React.lazy(() => import('views/knowledge-base/Article')),
-        authority: [ADMIN, USER],
-    },
-    {
-        key: 'appsknowledgeBase.manageArticles',
-        path: `${APP_PREFIX_PATH}/knowledge-base/manage-articles`,
-        component: React.lazy(() => import('views/knowledge-base/ManageArticles')),
-        authority: [ADMIN, USER],
-        meta: {
-            header: 'Manage Articles',
-            extraHeader: React.lazy(() => import('views/knowledge-base/ManageArticles/components/PanelHeader')),
-            headerContainer: true
-        }
-    },
-    {
-        key: 'appsknowledgeBase.editArticle',
-        path: `${APP_PREFIX_PATH}/knowledge-base/edit-article`,
-        component: React.lazy(() => import('views/knowledge-base/EditArticle')),
-        authority: [ADMIN, USER],
-    },
-    {
         key: 'appsAccount.settings',
         path: `${APP_PREFIX_PATH}/account/settings/:tab`,
         component: React.lazy(() => import('views/account/Settings')),
@@ -216,23 +193,18 @@ const appsRoute = [
         }
     },
     {
-        key: 'appsAccount.invoice',
-        path: `${APP_PREFIX_PATH}/account/invoice/:id`,
-        component: React.lazy(() => import('views/account/Invoice')),
+        key: 'appsAccount.invoices',
+        path: `${APP_PREFIX_PATH}/account/invoices`,
+        component: React.lazy(() => import('views/account/Invoices')),
         authority: [ADMIN, USER],
     },
     {
-        key: 'appsAccount.activityLog',
-        path: `${APP_PREFIX_PATH}/account/activity-log`,
-        component: React.lazy(() => import('views/account/ActivityLog')),
+        key: 'appsAccount.revenue',
+        path: `${APP_PREFIX_PATH}/account/revenue`,
+        component: React.lazy(() => import('views/account/Revenue')),
         authority: [ADMIN, USER],
     },
-    {
-        key: 'appsAccount.kycForm',
-        path: `${APP_PREFIX_PATH}/account/kyc-form`,
-        component: React.lazy(() => import('views/account/KycForm')),
-        authority: [ADMIN, USER],
-    },
+
 ]
 
 export default appsRoute

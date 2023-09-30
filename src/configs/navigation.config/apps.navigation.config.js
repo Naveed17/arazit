@@ -150,177 +150,38 @@ const appsNavigationConfig = [
 					}
 				]
 			},
-			{
-				key: 'apps.sales',
-				path: '',
-				title: 'Sales',
-				translateKey: 'nav.appsSales.sales',
-				icon: 'sales',
-				type: NAV_ITEM_TYPE_COLLAPSE,
-				authority: [ADMIN, USER],
-				subMenu: [
-					{
-						key: 'appsSales.dashboard',
-						path: `${APP_PREFIX_PATH}/sales/dashboard`,
-						title: 'Dashboard',
-						translateKey: 'nav.appsSales.dashboard',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'appsSales.productList',
-						path: `${APP_PREFIX_PATH}/sales/product-list`,
-						title: 'Product List',
-						translateKey: 'nav.appsSales.productList',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'appsSales.productEdit',
-						path: `${APP_PREFIX_PATH}/sales/product-edit/12`,
-						title: 'Product Edit',
-						translateKey: 'nav.appsSales.productEdit',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'appsSales.productNew',
-						path: `${APP_PREFIX_PATH}/sales/product-new`,
-						title: 'New Product',
-						translateKey: 'nav.appsSales.productNew',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'appsSales.orderList',
-						path: `${APP_PREFIX_PATH}/sales/order-list`,
-						title: 'Order List',
-						translateKey: 'nav.appsSales.orderList',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'appsSales.orderDetails',
-						path: `${APP_PREFIX_PATH}/sales/order-details/95954`,
-						title: 'Order Details',
-						translateKey: 'nav.appsSales.orderDetails',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-				]
-			},
-			{
-				key: 'apps.knowledgeBase',
-				path: '',
-				title: 'Knowledge Base',
-				translateKey: 'nav.appsknowledgeBase.knowledgeBase',
-				icon: 'knowledgeBase',
-				type: NAV_ITEM_TYPE_COLLAPSE,
-				authority: [ADMIN, USER],
-				subMenu: [
-					{
-						key: 'appsknowledgeBase.helpCenter',
-						path: `${APP_PREFIX_PATH}/knowledge-base/help-center`,
-						title: 'Help Center',
-						translateKey: 'nav.appsknowledgeBase.helpCenter',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'appsknowledgeBase.article',
-						path: `${APP_PREFIX_PATH}/knowledge-base/article?id=rZjCbSyae5`,
-						title: 'Article',
-						translateKey: 'nav.appsknowledgeBase.article',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'appsknowledgeBase.manageArticles',
-						path: `${APP_PREFIX_PATH}/knowledge-base/manage-articles`,
-						title: 'Manage Articles',
-						translateKey: 'nav.appsknowledgeBase.manageArticles',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'appsknowledgeBase.editArticle',
-						path: `${APP_PREFIX_PATH}/knowledge-base/edit-article?id=rZjCbSyae5&categoryLabel=Survey&categoryValue=survey`,
-						title: 'Edit Article',
-						translateKey: 'nav.appsknowledgeBase.editArticle',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-				]
-			},
+
 			{
 				key: 'apps.account',
 				path: '',
 				title: 'Account',
 				translateKey: 'nav.appsAccount.account',
-				icon: 'account',
+				icon: 'crypto',
 				type: NAV_ITEM_TYPE_COLLAPSE,
 				authority: [ADMIN, USER],
 				subMenu: [
+
 					{
-						key: 'appsAccount.settings',
-						path: `${APP_PREFIX_PATH}/account/settings/profile`,
-						title: 'Settings',
-						translateKey: 'nav.appsAccount.settings',
+						key: 'appsAccount.invoices',
+						path: `${APP_PREFIX_PATH}/account/invoices`,
+						title: 'Invoices',
+						translateKey: 'nav.appsAccount.invoices',
 						icon: '',
 						type: NAV_ITEM_TYPE_ITEM,
 						authority: [ADMIN, USER],
 						subMenu: []
 					},
 					{
-						key: 'appsAccount.invoice',
-						path: `${APP_PREFIX_PATH}/account/invoice/36223`,
-						title: 'Invoice',
-						translateKey: 'nav.appsAccount.invoice',
+						key: 'appsAccount.revenue',
+						path: `${APP_PREFIX_PATH}/account/revenue`,
+						title: 'Revenue',
+						translateKey: 'nav.appsAccount.revenue',
 						icon: '',
 						type: NAV_ITEM_TYPE_ITEM,
 						authority: [ADMIN, USER],
 						subMenu: []
 					},
-					{
-						key: 'appsAccount.activityLog',
-						path: `${APP_PREFIX_PATH}/account/activity-log`,
-						title: 'Activity Log',
-						translateKey: 'nav.appsAccount.activityLog',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
-					{
-						key: 'appsAccount.kycForm',
-						path: `${APP_PREFIX_PATH}/account/kyc-form`,
-						title: 'KYC Form',
-						translateKey: 'nav.appsAccount.kycForm',
-						icon: '',
-						type: NAV_ITEM_TYPE_ITEM,
-						authority: [ADMIN, USER],
-						subMenu: []
-					},
+
 				]
 			},
 		]
