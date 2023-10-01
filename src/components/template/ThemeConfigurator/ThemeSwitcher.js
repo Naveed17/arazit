@@ -20,7 +20,7 @@ const colorList = [
 	{ label: 'Cyan', value: 'cyan' },
 	{ label: 'Sky', value: 'sky' },
 	{ label: 'Blue', value: 'blue' },
-	{ label: 'Indigo', value: 'indigo' },
+	{ label: 'Gray', value: 'gray' },
 	{ label: 'Violet', value: 'violet' },
 	{ label: 'Purple', value: 'purple' },
 	{ label: 'Fuchsia', value: 'fuchsia' },
@@ -37,8 +37,8 @@ const colorLevelList = [
 	{ label: '900', value: 900 },
 ]
 
-const ColorBadge = ({className, themeColor}) => {
-	
+const ColorBadge = ({ className, themeColor }) => {
+
 	const primaryColorLevel = useSelector((state) => state.theme.primaryColorLevel)
 
 	return (
@@ -48,16 +48,16 @@ const ColorBadge = ({className, themeColor}) => {
 				classNames(
 					`bg-${themeColor}-${primaryColorLevel}`
 				)
-			} 
+			}
 		/>
 	)
 }
 
-const CustomSelectOption = ({innerProps, label, value, isSelected}) => {
+const CustomSelectOption = ({ innerProps, label, value, isSelected }) => {
 
 	return (
-		<div 
-			className={`flex items-center justify-between p-2 ${isSelected ? 'bg-gray-100 dark:bg-gray-500' : 'hover:bg-gray-50 dark:hover:bg-gray-600'}`} 
+		<div
+			className={`flex items-center justify-between p-2 ${isSelected ? 'bg-gray-100 dark:bg-gray-500' : 'hover:bg-gray-50 dark:hover:bg-gray-600'}`}
 			{...innerProps}
 		>
 			<div className="flex items-center gap-2">
@@ -69,7 +69,7 @@ const CustomSelectOption = ({innerProps, label, value, isSelected}) => {
 	)
 }
 
-const CustomControl = ({ children, ...props }) => {	 
+const CustomControl = ({ children, ...props }) => {
 
 	const selected = props.getValue()[0]
 
@@ -90,11 +90,11 @@ const ThemeSwitcher = () => {
 	const themeColor = useSelector((state) => state.theme.themeColor)
 	const primaryColorLevel = useSelector((state) => state.theme.primaryColorLevel)
 
-	const onThemeColorChange = ({value}) => {
+	const onThemeColorChange = ({ value }) => {
 		dispatch(setThemeColor(value))
 	}
 
-	const onThemeColorLevelChange = ({value}) => {
+	const onThemeColorLevelChange = ({ value }) => {
 		dispatch(setThemeColorLevel(value))
 	}
 
@@ -102,10 +102,10 @@ const ThemeSwitcher = () => {
 		<div className="grid grid-cols-2 gap-4">
 			<Select
 				size="sm"
-				options={colorList} 
-				components={{ 
-					Option: CustomSelectOption, 
-					Control: CustomControl 
+				options={colorList}
+				components={{
+					Option: CustomSelectOption,
+					Control: CustomControl
 				}}
 				value={colorList.filter(color => color.value === themeColor)}
 				onChange={onThemeColorChange}
