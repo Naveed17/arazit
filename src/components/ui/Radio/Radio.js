@@ -8,7 +8,7 @@ const Radio = React.forwardRef((props, ref) => {
 
 	const {
 		name: nameContext,
-    	disabled: disabledContext,
+		disabled: disabledContext,
 		value: groupValue,
 		onChange: onGroupChange,
 		color: colorContext,
@@ -17,8 +17,8 @@ const Radio = React.forwardRef((props, ref) => {
 	} = useContext(RadioGroupContext)
 
 
-	const { 
-		children, 
+	const {
+		children,
 		className,
 		checked: checkedProp,
 		color,
@@ -26,14 +26,14 @@ const Radio = React.forwardRef((props, ref) => {
 		disabled = disabledContext,
 		field,
 		form,
-		id, 
+		id,
 		labelRef,
 		name = nameContext,
 		onChange,
 		readOnly,
-		value, 
+		value,
 		vertical = verticalContext,
-		...rest 
+		...rest
 	} = props
 
 	const { themeColor, primaryColorLevel } = useConfig()
@@ -47,11 +47,11 @@ const Radio = React.forwardRef((props, ref) => {
 
 	const radioColor = color || colorContext || `${themeColor}-${primaryColorLevel}`
 
-	const controlProps = useMemo(() =>  {
-		if(typeof groupValue !== 'undefined') {
-			return { checked: radioChecked}
+	const controlProps = useMemo(() => {
+		if (typeof groupValue !== 'undefined') {
+			return { checked: radioChecked }
 		}
-		return { checked: checkedProp, defaultChecked}
+		return { checked: checkedProp, defaultChecked }
 	}, [radioChecked, checkedProp, defaultChecked, groupValue])
 
 	const onRadioChange = useCallback((e) => {
@@ -60,6 +60,7 @@ const Radio = React.forwardRef((props, ref) => {
 		}
 		onGroupChange?.(value, e)
 		onChange?.(value, e)
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [disabled, setRadioChecked, onChange, value, onGroupChange, groupValue, readOnly])
 
 
@@ -84,7 +85,7 @@ const Radio = React.forwardRef((props, ref) => {
 		labelDisabledClass,
 		className,
 		`${'inline-flex'}`,
-		`${radioGutter ? 'm' + (vertical ? 'b-': 'r-') + radioGutter : ''}`
+		`${radioGutter ? 'm' + (vertical ? 'b-' : 'r-') + radioGutter : ''}`
 	)
 
 	return (
@@ -103,7 +104,7 @@ const Radio = React.forwardRef((props, ref) => {
 				{...field}
 				{...rest}
 			/>
-			{children ? <span className={classNames('ltr:ml-2 rtl:mr-2', disabled ? 'opacity-50' : '') }>{children}</span> : null}
+			{children ? <span className={classNames('ltr:ml-2 rtl:mr-2', disabled ? 'opacity-50' : '')}>{children}</span> : null}
 		</label>
 	)
 })

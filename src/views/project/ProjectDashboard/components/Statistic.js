@@ -3,7 +3,6 @@ import { Card } from 'components/ui'
 import NumberFormat from 'react-number-format'
 import { GrowShrinkTag } from 'components/shared'
 import { useSelector } from 'react-redux'
-import dayjs from 'dayjs'
 
 const StatisticCard = ({ data = {}, label, valuePrefix, date }) => {
 	return (

@@ -52,136 +52,14 @@ const appsRoute = [
         component: React.lazy(() => import('views/users/Clients')),
         authority: [ADMIN, USER],
     },
-    {
-        key: 'appsCrm.calendar',
-        path: `${APP_PREFIX_PATH}/crm/calendar`,
-        component: React.lazy(() => import('views/crm/Calendar')),
-        authority: [ADMIN, USER],
-    },
-    {
-        key: 'appsCrm.customers',
-        path: `${APP_PREFIX_PATH}/crm/customers`,
-        component: React.lazy(() => import('views/crm/Customers')),
-        authority: [ADMIN, USER],
-        meta: {
-            header: 'Customers',
 
-        }
-    },
-    {
-        key: 'appsCrm.customerDetails',
-        path: `${APP_PREFIX_PATH}/crm/customer-details`,
-        component: React.lazy(() => import('views/crm/CustomerDetail')),
-        authority: [ADMIN, USER],
-        meta: {
-            header: 'Customer Details',
-            headerContainer: true
-        }
-    },
-    {
-        key: 'appsCrm.mail',
-        path: `${APP_PREFIX_PATH}/crm/mail`,
-        component: React.lazy(() => import('views/crm/Mail')),
-        authority: [ADMIN, USER],
-        meta: {
-            pageContainerType: 'gutterless',
-            footer: false
-        }
-    },
-    {
-        key: 'appsCrm.mail',
-        path: `${APP_PREFIX_PATH}/crm/mail/:category`,
-        component: React.lazy(() => import('views/crm/Mail')),
-        authority: [ADMIN, USER],
-        meta: {
-            pageContainerType: 'gutterless',
-            footer: false
-        }
-    },
-    {
-        key: 'appsSales.dashboard',
-        path: `${APP_PREFIX_PATH}/sales/dashboard`,
-        component: React.lazy(() => import('views/sales/SalesDashboard')),
-        authority: [ADMIN, USER],
-    },
-    {
-        key: 'appsSales.productList',
-        path: `${APP_PREFIX_PATH}/sales/product-list`,
-        component: React.lazy(() => import('views/sales/ProductList')),
-        authority: [ADMIN, USER],
-    },
-    {
-        key: 'appsSales.productEdit',
-        path: `${APP_PREFIX_PATH}/sales/product-edit/:productId`,
-        component: React.lazy(() => import('views/sales/ProductEdit')),
-        authority: [ADMIN, USER],
-        meta: {
-            header: 'Edit Product',
-        }
-    },
-    {
-        key: 'appsSales.productNew',
-        path: `${APP_PREFIX_PATH}/sales/product-new`,
-        component: React.lazy(() => import('views/sales/ProductNew')),
-        authority: [ADMIN, USER],
-        meta: {
-            header: 'Add New Product',
-        }
-    },
-    {
-        key: 'appsSales.orderList',
-        path: `${APP_PREFIX_PATH}/sales/order-list`,
-        component: React.lazy(() => import('views/sales/OrderList')),
-        authority: [ADMIN, USER],
-    },
-    {
-        key: 'appsSales.orderDetails',
-        path: `${APP_PREFIX_PATH}/sales/order-details/:orderId`,
-        component: React.lazy(() => import('views/sales/OrderDetails')),
-        authority: [ADMIN, USER],
-    },
     {
         key: 'appsLeads.dashboard',
         path: `${APP_PREFIX_PATH}/leads`,
-        component: React.lazy(() => import('views/crypto/CryptoDashboard')),
+        component: React.lazy(() => import('views/leads')),
         authority: [ADMIN, USER],
     },
-    {
-        key: 'appsCrypto.portfolio',
-        path: `${APP_PREFIX_PATH}/crypto/portfolio`,
-        component: React.lazy(() => import('views/crypto/Portfolio')),
-        authority: [ADMIN, USER],
-        meta: {
-            header: 'Portfolio',
-        }
-    },
-    {
-        key: 'appsCrypto.market',
-        path: `${APP_PREFIX_PATH}/crypto/market`,
-        component: React.lazy(() => import('views/crypto/Market')),
-        authority: [ADMIN, USER],
-        meta: {
-            header: 'Market',
-        }
-    },
-    {
-        key: 'appsCrypto.wallets',
-        path: `${APP_PREFIX_PATH}/crypto/wallets`,
-        component: React.lazy(() => import('views/crypto/Wallets')),
-        authority: [ADMIN, USER],
-        meta: {
-            header: 'Wallets',
-        }
-    },
-    {
-        key: 'appsknowledgeBase.helpCenter',
-        path: `${APP_PREFIX_PATH}/knowledge-base/help-center`,
-        component: React.lazy(() => import('views/knowledge-base/HelpCenter')),
-        authority: [ADMIN, USER],
-        meta: {
-            pageContainerType: 'gutterless',
-        }
-    },
+
     {
         key: 'appsAccount.settings',
         path: `${APP_PREFIX_PATH}/account/settings/:tab`,

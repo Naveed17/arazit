@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react'
 import { Loading, DataTable } from 'components/shared'
 import { Select, DatePicker, Button, Badge } from 'components/ui'
 import { colourOptions, data10 } from './components/data'
-import { HiOutlinePencil, HiOutlineTrash } from 'react-icons/hi'
+import { HiOutlinePencil } from 'react-icons/hi'
 import useThemeClass from 'utils/hooks/useThemeClass'
 import TableTools from './components/TableTools';
 const ActionColumn = () => {

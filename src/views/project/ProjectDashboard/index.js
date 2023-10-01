@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react'
 import reducer from './store'
-import salesReducer from '../../sales/SalesDashboard/store'
-import { getSalesDashboardData } from '../../sales/SalesDashboard/store/dataSlice'
 import { injectReducer } from 'store/index'
 import { getProjectDashboardData } from './store/dataSlice'
 import { Loading } from 'components/shared'
@@ -9,17 +7,13 @@ import ProjectDashboardHeader from './components/ProjectDashboardHeader'
 import TaskOverview from './components/TaskOverview'
 import Statistic from './components/Statistic'
 import { useDispatch, useSelector } from 'react-redux'
-
+import { statisticData } from './components/data'
 injectReducer('projectDashboard', reducer)
-injectReducer('salesDashboard', salesReducer)
 const ProjectDashboard = () => {
-
 	const dispatch = useDispatch()
-
 	const {
 		projectOverviewData,
 	} = useSelector((state) => state.projectDashboard.data.dashboardData)
-	const { statisticData } = useSelector((state) => state?.salesDashboard?.data?.dashboardData)
 
 	const loading = useSelector((state) => state.projectDashboard.data.loading)
 
@@ -30,7 +24,7 @@ const ProjectDashboard = () => {
 
 	const fetchData = () => {
 		dispatch(getProjectDashboardData())
-		dispatch(getSalesDashboardData())
+
 	}
 
 	return (
