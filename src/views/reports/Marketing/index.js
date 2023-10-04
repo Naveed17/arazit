@@ -123,7 +123,7 @@ const Marketing = () => {
     return (
         <div className="flex flex-col gap-4 h-full">
             <Loading loading={false}>
-                <p className="font-semibold mb-10">Marketing <span className='text-gray-400'>Report</span></p>
+                <p className="font-semibold mb-10 text-base">Marketing <span className='text-gray-400'>Report</span></p>
                 <div className="grid grid-cols-1 xl:grid-cols-4 gap-4 gap-y-8 mb-10">
                     <Select
                         onChange={(newValue) => setState({

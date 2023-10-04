@@ -1,20 +1,21 @@
 import React from 'react'
 import { Button, Input } from 'components/ui'
 import { HiDownload, HiOutlineSearch } from 'react-icons/hi'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const ProductTableTools = () => {
+	const navigate = useNavigate()
+	const handleCreate = () => {
+		navigate('/app/leads/create-lead')
+		window.scrollTo(0, 0)
+	}
+
+
 	return (
 		<div className="flex flex-col lg:flex-row lg:items-center justify-end">
-			<Link
-				className="block lg:inline-block md:mb-0 mb-4"
-				to="/app/sales/product-new"
-			>
-				<Button size="sm" shape="circle">
-					Create Leads
-				</Button>
-			</Link>
-
+			<Button onClick={handleCreate} size="sm" shape="circle">
+				Create Lead
+			</Button>
 			<Link
 				className="block lg:inline-block md:mx-2 md:mb-0 mb-4"
 				to="/data/product-list.csv"

@@ -57,7 +57,7 @@ function AllUsers() {
     return (
         <div className="flex flex-col gap-4 h-full">
             <Loading loading={false}>
-                <p className="font-semibold mb-10 text-black text-[17px]">All Users</p>
+                <p className="font-semibold mb-10 text-black dark:text-white text-base">All Users</p>
                 <div className="flex flex-col gap-2">
                     <Button size="sm" variant="solid" className="!rounded-lg self-end px-10">Add Users</Button>
                     <DataTable columns={columns}

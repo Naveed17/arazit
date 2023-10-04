@@ -13,7 +13,7 @@ const appsRoute = [
     {
         key: 'appsCrm.category',
         path: `${APP_PREFIX_PATH}/crm/category`,
-        component: React.lazy(() => import('views/crm/CrmDashboard')),
+        component: React.lazy(() => import('views/crm/Category')),
         authority: [ADMIN, USER],
     },
     {
@@ -57,6 +57,12 @@ const appsRoute = [
         key: 'appsLeads.dashboard',
         path: `${APP_PREFIX_PATH}/leads`,
         component: React.lazy(() => import('views/leads')),
+        authority: [ADMIN, USER],
+    },
+    {
+
+        path: `${APP_PREFIX_PATH}/leads/create-lead`,
+        component: React.lazy(() => import('views/leads/CreateLead')),
         authority: [ADMIN, USER],
     },
 

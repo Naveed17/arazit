@@ -16,7 +16,7 @@ function SalesPerformance() {
     return (
         <div className="flex flex-col gap-4 h-full">
             <Loading loading={false}>
-                <p className="font-semibold mb-10 text-black text-[17px]">User Sales Performance</p>
+                <p className="font-semibold mb-10 text-base text-black dark:text-white">User Sales Performance</p>
                 <div className="grid grid-cols-1 xl:grid-cols-4 gap-4">
                     <Select
 

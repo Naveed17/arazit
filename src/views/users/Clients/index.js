@@ -68,7 +68,7 @@ function Clients() {
     return (
         <div className="flex flex-col gap-4 h-full">
             <Loading loading={false}>
-                <p className="font-semibold mb-10 text-black text-[17px]">All Clients</p>
+                <p className="font-semibold mb-10 text-black dark:text-white text-base">All Clients</p>
                 <div className="flex flex-col gap-2">
                     <div className="flex md:flex-row flex-col items-center gap-2 md:justify-end">
                         <Input

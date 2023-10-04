@@ -15,7 +15,7 @@ function ActivityLogs() {
     return (
         <div className="flex flex-col gap-4 h-full">
             <Loading loading={false}>
-                <p className="font-semibold mb-10">Activity <span className='text-gray-400 text-xs'>Report</span></p>
+                <p className="font-semibold mb-10 text-base">Activity <span className='text-gray-400 text-xs'>Report</span></p>
                 <div className="grid grid-cols-1 xl:grid-cols-4 gap-4">
                     <Select
 
