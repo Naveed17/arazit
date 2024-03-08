@@ -1,13 +1,17 @@
 import React from 'react'
-import { Button, Input } from 'components/ui'
+import { Button, Dialog, Input } from 'components/ui'
 import { HiDownload, HiOutlineSearch } from 'react-icons/hi'
 import { Link, useNavigate } from 'react-router-dom'
+import { CreateLead } from '../CreateLead'
 
 const ProductTableTools = () => {
-	const navigate = useNavigate()
+	const [isOpen, setIsopen] = React.useState(false)
 	const handleCreate = () => {
-		navigate('/app/leads/create-lead')
-		window.scrollTo(0, 0)
+		setIsopen(true)
+	}
+	const handleClose = () => {
+		setIsopen(false)
+
 	}
 
 
@@ -37,6 +41,10 @@ const ProductTableTools = () => {
 				prefix={<HiOutlineSearch className="text-lg" />}
 
 			/>
+			<Dialog {...{ isOpen }} className="w-full" width={'unset'} contentClassName="min-h-[300px]" onClose={handleClose}
+				onRequestClose={handleClose}>
+				<CreateLead />
+			</Dialog>
 		</div>
 	)
 }

@@ -48,7 +48,7 @@ const appsNavigationConfig = [
 			{
 				key: 'apps.crm',
 				path: '',
-				title: 'Crm Categories',
+				title: 'Categories',
 				translateKey: 'nav.appsCrm.crmCategories',
 				icon: 'sharedComponentDoc',
 				type: NAV_ITEM_TYPE_COLLAPSE,

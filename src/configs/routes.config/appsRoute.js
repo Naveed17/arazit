@@ -59,12 +59,12 @@ const appsRoute = [
         component: React.lazy(() => import('views/leads')),
         authority: [ADMIN, USER],
     },
-    {
+    // {
 
-        path: `${APP_PREFIX_PATH}/leads/create-lead`,
-        component: React.lazy(() => import('views/leads/CreateLead')),
-        authority: [ADMIN, USER],
-    },
+    //     path: `${APP_PREFIX_PATH}/leads/create-lead`,
+    //     component: React.lazy(() => import('views/leads/CreateLead')),
+    //     authority: [ADMIN, USER],
+    // },
 
     {
         key: 'appsAccount.settings',

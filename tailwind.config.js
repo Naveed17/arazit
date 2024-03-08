@@ -1,5 +1,6 @@
 const flattenColorPalette = require('tailwindcss/lib/util/flattenColorPalette').default
 const safeListFile = 'safelist.txt'
+const colors = require('tailwindcss/colors')
 module.exports = {
   mode: 'jit',
   content: [
@@ -12,6 +13,14 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
+    colors: {
+      ...colors,
+      red: {
+        ...colors.red,
+        400: "#E8505B"
+      }
+
+    },
     fontFamily: {
       sans: [
         'Inter',
@@ -73,10 +82,10 @@ module.exports = {
 
       const colorMap = Object.keys(colors)
         .map(color => ({
-          [`.border-t-${color}`]: {borderTopColor: colors[color]},
-          [`.border-r-${color}`]: {borderRightColor: colors[color]},
-          [`.border-b-${color}`]: {borderBottomColor: colors[color]},
-          [`.border-l-${color}`]: {borderLeftColor: colors[color]},
+          [`.border-t-${color}`]: { borderTopColor: colors[color] },
+          [`.border-r-${color}`]: { borderRightColor: colors[color] },
+          [`.border-b-${color}`]: { borderBottomColor: colors[color] },
+          [`.border-l-${color}`]: { borderLeftColor: colors[color] },
         }));
       const utilities = Object.assign({}, ...colorMap);
 

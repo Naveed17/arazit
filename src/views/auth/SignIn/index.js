@@ -3,13 +3,10 @@ import SignInForm from './SignInForm'
 
 const SignIn = () => {
 	return (
-		<>
-			<div className="mb-8">
-				<h3 className="mb-1">Welcome back!</h3>
-				<p>Please enter your credentials to sign in!</p>
-			</div>
+		<div className='flex flex-col gap-8'>
+			<img src='/img/logo/KIT-logo.png' className='self-center' />
 			<SignInForm disableSubmit={false} />
-		</>
+		</div>
 	)
 }
 

@@ -45,6 +45,7 @@ const CrmDashboard = () => {
 	return (
 		<div className="flex flex-col gap-4 h-full">
 			<Loading loading={false}>
+				<p className="font-semibold mb-10 text-black dark:text-white text-xl">Categories</p>
 				<div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
 					<Input
 						className="sm:col-span-3 xl:col-span-1"
@@ -53,7 +54,7 @@ const CrmDashboard = () => {
 
 
 					/>
-					<Button variant="solid" size="sm" className="xl:place-self-start">
+					<Button size="sm" variant="outlined" className="xl:place-self-start">
 						Add Category
 					</Button>
 				</div>

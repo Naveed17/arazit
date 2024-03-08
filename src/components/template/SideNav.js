@@ -2,11 +2,11 @@ import React from 'react'
 import classNames from 'classnames'
 import { ScrollBar } from 'components/ui'
 import PropTypes from 'prop-types'
-import { 
+import {
 	SIDE_NAV_WIDTH,
 	SIDE_NAV_COLLAPSED_WIDTH,
-	NAV_MODE_DARK, 
-	NAV_MODE_THEMED, 
+	NAV_MODE_DARK,
+	NAV_MODE_THEMED,
 	NAV_MODE_TRANSPARENT,
 	SIDE_NAV_CONTENT_GUTTER,
 	LOGO_X_GUTTER,
@@ -41,18 +41,18 @@ const SideNav = () => {
 	const { larger } = useResponsive()
 
 	const sideNavColor = () => {
-		if(navMode === NAV_MODE_THEMED) {
+		if (navMode === NAV_MODE_THEMED) {
 			return `bg-${themeColor}-${primaryColorLevel} side-nav-${navMode}`
 		}
 		return `side-nav-${navMode}`
 	}
 
 	const logoMode = () => {
-		if(navMode === NAV_MODE_THEMED) {
+		if (navMode === NAV_MODE_THEMED) {
 			return NAV_MODE_DARK
 		}
 
-		if(navMode === NAV_MODE_TRANSPARENT) {
+		if (navMode === NAV_MODE_TRANSPARENT) {
 			return mode
 		}
 
@@ -61,7 +61,7 @@ const SideNav = () => {
 
 	const menuContent = (
 		<VerticalMenuContent
-			navMode={navMode} 
+			navMode={navMode}
 			collapsed={sideNavCollapse}
 			navigationTree={navigationConfig}
 			routeKey={currentRouteKey}
@@ -73,8 +73,8 @@ const SideNav = () => {
 	return (
 		<>
 			{larger.md && (
-				<div 
-					style={sideNavCollapse ? sideNavCollapseStyle : sideNavStyle } 
+				<div
+					style={sideNavCollapse ? sideNavCollapseStyle : sideNavStyle}
 					className={
 						classNames(
 							'side-nav',
@@ -83,22 +83,23 @@ const SideNav = () => {
 						)
 					}
 				>
-					<div className="side-nav-header">
-						<Logo 
-							mode={logoMode()} 
-							type={sideNavCollapse ? 'streamline' : 'full'} 
-							gutter={sideNavCollapse ? SIDE_NAV_CONTENT_GUTTER : LOGO_X_GUTTER} 
+					<div className="side-nav-header pb-4">
+						<Logo
+							imgClass='w-[149px]'
+							mode={logoMode()}
+							type={sideNavCollapse ? 'streamline' : 'full'}
+							gutter={sideNavCollapse ? SIDE_NAV_CONTENT_GUTTER : LOGO_X_GUTTER}
 						/>
 					</div>
 					{
 						sideNavCollapse ?
-						menuContent
-						:
-						<div className="side-nav-content">
-							<ScrollBar autoHide direction={direction}>
-								{menuContent}
-							</ScrollBar>
-						</div>
+							menuContent
+							:
+							<div className="side-nav-content">
+								<ScrollBar autoHide direction={direction}>
+									{menuContent}
+								</ScrollBar>
+							</div>
 					}
 				</div>
 			)}
@@ -108,7 +109,7 @@ const SideNav = () => {
 
 SideNav.propTypes = {
 	themed: PropTypes.bool,
-	darkMode: PropTypes.bool, 
+	darkMode: PropTypes.bool,
 	themeColor: PropTypes.string
 }
 

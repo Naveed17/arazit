@@ -8,14 +8,14 @@ import useColorLevel from '../hooks/useColorLevel'
 import { CONTROL_SIZES, SIZES } from '../utils/constant'
 import Spinner from '../Spinner'
 
-const Button =  React.forwardRef((props, ref) => {
+const Button = React.forwardRef((props, ref) => {
 	const { children, size, color, shape, variant, block, icon, className, disabled, loading, active, danger, ...rest } = props
 	const { themeColor, controlSize, primaryColorLevel } = useConfig()
 	const formControlSize = useForm()?.size
 	const inputGroupSize = useInputGroup()?.size
 	const defaultClass = 'button'
 	const sizeIconClass = 'inline-flex items-center justify-center'
-	
+
 	const splitedColor = color.split('-')
 
 	const buttonSize = size || inputGroupSize || formControlSize || controlSize
@@ -55,7 +55,7 @@ const Button =  React.forwardRef((props, ref) => {
 		return sizeClass
 	}
 
-	const disabledClass= 'opacity-50 cursor-not-allowed'
+	const disabledClass = 'opacity-50 cursor-not-allowed'
 
 	const solidColor = () => {
 		const btn = {
@@ -63,6 +63,17 @@ const Button =  React.forwardRef((props, ref) => {
 			textColor: 'text-white',
 			hoverColor: active ? '' : `hover:bg-${buttonColor}-${decreaseLevel}`,
 			activeColor: `active:bg-${buttonColor}-${increaseLevel}`
+		}
+		return getBtnColor(btn)
+	}
+	const outlined = () => {
+		const btn = {
+			bgColor: 'transparent',
+			border: 'border',
+			textColor: `text-${buttonColor}-${buttonColorLevel} dark:text-${buttonColor}-50`,
+			hoverColor: active ? '' : `hover:bg-gray-50`,
+			activeColor: `active:bg-gray-100`,
+			borderColor: active ? `border-${buttonColor}-${increaseLevel}` : `border-${buttonColor}-${buttonColorLevel}`
 		}
 		return getBtnColor(btn)
 	}
@@ -97,8 +108,8 @@ const Button =  React.forwardRef((props, ref) => {
 		return getBtnColor(btn)
 	}
 
-	const getBtnColor = ({bgColor, hoverColor, activeColor, textColor}) => {
-		return `${bgColor} ${disabled || loading ? disabledClass : (hoverColor + ' ' + activeColor)} ${textColor}`
+	const getBtnColor = ({ bgColor, hoverColor, activeColor, textColor, borderColor = "transparent", border = "none" }) => {
+		return `${bgColor} ${disabled || loading ? disabledClass : (hoverColor + ' ' + activeColor)} ${textColor} ${borderColor} ${border}`
 	}
 
 	const btnColor = () => {
@@ -109,13 +120,15 @@ const Button =  React.forwardRef((props, ref) => {
 				return twoToneColor()
 			case 'plain':
 				return plainColor()
+			case 'outlined':
+				return outlined()
 			case 'default':
 				return defaultColor()
 			default:
 				return defaultColor()
 		}
 	}
-	
+
 	const classes = classNames(
 		defaultClass,
 		btnColor(),
@@ -136,7 +149,7 @@ const Button =  React.forwardRef((props, ref) => {
 
 	const renderChildren = () => {
 
-		if(loading && children) {
+		if (loading && children) {
 			return (
 				<span className="flex items-center justify-center">
 					<Spinner enableTheme={false} className="mr-1" />
@@ -145,20 +158,20 @@ const Button =  React.forwardRef((props, ref) => {
 			)
 		}
 
-		if((icon && !children) && loading) {
+		if ((icon && !children) && loading) {
 			return <Spinner enableTheme={false} />
 		}
 
-		if((icon && !children) && !loading) {
+		if ((icon && !children) && !loading) {
 			return <>{icon}</>
 		}
 
-		if((icon && children) && !loading) {
+		if ((icon && children) && !loading) {
 			return (
-			<span className="flex items-center justify-center">
-				<span className="text-lg">{icon}</span>
-				<span className="ltr:ml-1 rtl:mr-1">{children}</span>
-			</span>
+				<span className="flex items-center justify-center">
+					<span className="text-lg">{icon}</span>
+					<span className="ltr:ml-1 rtl:mr-1">{children}</span>
+				</span>
 			)
 		}
 
@@ -167,13 +180,13 @@ const Button =  React.forwardRef((props, ref) => {
 	}
 
 	return (
-		<button 
-			ref={ref} 
-			className={classes} 
-			{...rest} 
+		<button
+			ref={ref}
+			className={classes}
+			{...rest}
 			onClick={handleClick}
 		>
-			{ renderChildren()  }
+			{renderChildren()}
 		</button>
 	)
 })
@@ -186,7 +199,7 @@ Button.propTypes = {
 	className: PropTypes.string,
 	size: PropTypes.oneOf([SIZES.LG, SIZES.SM, SIZES.XS, SIZES.MD]),
 	color: PropTypes.string,
-	variant: PropTypes.oneOf(['solid', 'twoTone', 'plain', 'default']),
+	variant: PropTypes.oneOf(['solid', 'twoTone', 'plain', 'default', 'outlined']),
 	icon: PropTypes.oneOfType([
 		PropTypes.string,
 		PropTypes.node

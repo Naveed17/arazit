@@ -14,9 +14,9 @@ const validationSchema = Yup.object().shape({
 
 const SignInForm = props => {
 
-	const { 
-		disableSubmit = false, 
-		className, 
+	const {
+		disableSubmit = false,
+		className,
 		forgotPasswordUrl = '/forgot-password',
 		signUpUrl = '/sign-up'
 	} = props
@@ -28,7 +28,7 @@ const SignInForm = props => {
 	const onSignIn = async (values, setSubmitting) => {
 		const { userName, password } = values
 		setSubmitting(true)
-		
+
 		const result = await signIn({ userName, password })
 
 		if (result.status === 'failed') {
@@ -43,33 +43,33 @@ const SignInForm = props => {
 			{message && <Alert className="mb-4" type="danger" showIcon>{message}</Alert>}
 			<Formik
 				initialValues={{
-					userName: 'admin', 
-					password: '123Qwe', 
-					rememberMe: true 
+					userName: 'admin',
+					password: '123Qwe',
+					rememberMe: true
 				}}
 				validationSchema={validationSchema}
 				onSubmit={(values, { setSubmitting }) => {
-					if(!disableSubmit) {
+					if (!disableSubmit) {
 						onSignIn(values, setSubmitting)
 					} else {
 						setSubmitting(false)
 					}
 				}}
 			>
-				{({touched, errors, isSubmitting}) => (
+				{({ touched, errors, isSubmitting }) => (
 					<Form>
 						<FormContainer>
 							<FormItem
 								label="User Name"
-								invalid={errors.userName && touched.userName}
+								invalid={!!(errors.userName && touched.userName)}
 								errorMessage={errors.userName}
 							>
-								<Field 
-									type="text" 
-									autoComplete="off" 
-									name="userName" 
-									placeholder="User Name" 
-									component={Input} 
+								<Field
+									type="text"
+									autoComplete="off"
+									name="userName"
+									placeholder="User Name"
+									component={Input}
 								/>
 							</FormItem>
 							<FormItem
@@ -78,10 +78,10 @@ const SignInForm = props => {
 								errorMessage={errors.password}
 							>
 								<Field
-									autoComplete="off" 
-									name="password" 
-									placeholder="Password" 
-									component={PasswordInput} 
+									autoComplete="off"
+									name="password"
+									placeholder="Password"
+									component={PasswordInput}
 								/>
 							</FormItem>
 							<div className="flex justify-between mb-6">
@@ -90,15 +90,9 @@ const SignInForm = props => {
 									Forgot Password?
 								</ActionLink>
 							</div>
-							<Button block loading={isSubmitting} variant="solid" type="submit">
-								{ isSubmitting ? 'Signing in...' : 'Sign In' }
+							<Button className="uppercase" block loading={isSubmitting} variant="solid" type="submit">
+								{isSubmitting ? 'Signing in...' : 'Login'}
 							</Button>
-							<div className="mt-4 text-center">
-								<span>Don't have an account yet? </span>
-								<ActionLink to={signUpUrl}>
-									Sign up
-								</ActionLink>
-							</div>
 						</FormContainer>
 					</Form>
 				)}
